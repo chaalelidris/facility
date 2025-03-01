@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, Suspense } from "react";
 import { SearchNormal1, Setting4 } from "iconsax-react";
 import Logo from "@/components/logo";
 import { Sidebar } from "@/components/sidebar";
@@ -86,7 +86,9 @@ const Header = () => {
       {/* Bottom nav */}
       <div className="max-w-8xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
-          <NavigationScroller items={navCategories} />
+          <Suspense fallback={<div>Loading ...</div>}>
+            <NavigationScroller items={navCategories} />
+          </Suspense>
           <HeaderButtons actions={userActions} />
         </div>
       </div>

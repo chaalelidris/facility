@@ -48,7 +48,9 @@ const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
             <div key={index} className="">
               <CategoryCard
                 key={category.id}
-                imageUrl={category.imageUrl}
+                imageUrl={
+                  category.imageUrl || "/images/landscape-placeholder.svg"
+                }
                 label={category.label}
                 href={category.href}
               />

@@ -22,7 +22,7 @@ const InfiniteScroller = ({ items }: InfiniteScrollerProps) => {
       {repeatedItems.map((item, index) => (
         <div key={`${item.id}-${index}`} className="mx-12 my-12">
           <Image
-            src={item.imageUrl}
+            src={item.imageUrl || "/images/landscape-placeholder.svg"}
             alt={item.name}
             width={100}
             height={100}
